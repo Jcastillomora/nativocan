@@ -377,4 +377,29 @@
       min-height: 800px;
     }
   }
+
+  /* Instagram embed rounded corners */
+  .instagram-media {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+  }
+
+  .instagram-media iframe {
+    border-radius: 16px !important;
+  }
+
+  .instagram-post-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  /* Ensure Instagram embeds maintain consistent styling */
+  .instagram-media:not(.instagram-media-rendered) {
+    background: #f9fafb;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
