@@ -17,6 +17,7 @@ import { faqs } from '../data/faqs.js';
 import ContactForm from '../components/ContactForm.astro';
 import Footer from '../components/Footer.astro';
 import BackToTop from '../components/BackToTop.astro';
+import SocialFeed from '../components/SocialFeed.astro';
 
 // Structured Data
 const localBusinessSchema = {
@@ -241,6 +242,9 @@ const reviewSchemas = testimonials.map(t => ({
       </div>
     </div>
   </section>
+
+  <!-- Social Feed Section -->
+  <SocialFeed />
 
   <!-- SEO Content Section -->
   <section class="py-16 md:py-24 bg-neutral-50">
