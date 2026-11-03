@@ -159,6 +159,7 @@ El formulario de contacto usa **Web3Forms** (gratuito). Para activarlo:
 - [ ] Reemplazar todas las imágenes placeholder con fotos reales
 - [ ] Actualizar geo tags en `src/layouts/Layout.astro` (región, ciudad)
 - [ ] Añadir Google Maps iframe en sección de contacto
+- [ ] Configurar feeds de Instagram y TikTok (ver `docs/SOCIAL_FEED_SETUP.md`)
 
 ### SEO
 - [ ] Submit sitemap a Google Search Console: `https://tu-sitio.com/sitemap.xml`
