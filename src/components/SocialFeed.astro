@@ -92,13 +92,13 @@
       <!-- TikTok Embed Container -->
       <div class="tiktok-feed-container">
         <div class="flex justify-center">
-          <div id="tiktok-embed-wrapper">
+          <div id="tiktok-embed-wrapper" class="w-full max-w-4xl">
             <blockquote
               class="tiktok-embed"
               cite="https://www.tiktok.com/@nativocan.cl"
               data-unique-id="nativocan.cl"
               data-embed-type="creator"
-              style="max-width: 780px; min-width: 288px;">
+              style="max-width: 100%; min-width: 288px; width: 100%;">
               <section>
                 <a target="_blank" href="https://www.tiktok.com/@nativocan.cl?refer=creator_embed">@nativocan.cl</a>
               </section>
@@ -285,5 +285,40 @@
     height: 3px;
     background: currentColor;
     border-radius: 2px;
+  }
+
+  /* TikTok embed responsive sizing */
+  #tiktok-embed-wrapper {
+    min-height: 600px;
+  }
+
+  @media (min-width: 768px) {
+    #tiktok-embed-wrapper {
+      min-height: 700px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #tiktok-embed-wrapper {
+      min-height: 800px;
+    }
+  }
+
+  /* Ensure TikTok iframe scales properly */
+  .tiktok-embed iframe {
+    width: 100% !important;
+    min-height: 600px;
+  }
+
+  @media (min-width: 768px) {
+    .tiktok-embed iframe {
+      min-height: 700px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .tiktok-embed iframe {
+      min-height: 800px;
+    }
   }
 </style>
