@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import { siteData } from '../data/site.js';
-
-console.log('Testing data import:', siteData.business.name);
 ---
 <Layout title="Test" description="Test page">
-  <h1>Test - {siteData.business.name}</h1>
+  <Header />
+  <div class="h-screen flex items-center justify-center">
+    <h1 class="text-4xl">Test - {siteData.business.name}</h1>
+  </div>
 </Layout>
