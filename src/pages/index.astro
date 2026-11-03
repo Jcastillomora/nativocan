@@ -2,9 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
 import { siteData } from '../data/site.js';
+import { trainingServices } from '../data/services.js';
 ---
 <Layout title="Test" description="Test page">
   <Header />
   <Hero />
+
+  <!-- Services Section -->
+  <section id="servicios" class="py-16 md:py-24 bg-neutral-50">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-900">
+        Nuestros Servicios de Adiestramiento
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" data-stagger-container>
+        {trainingServices.map(service => (
+          <div data-stagger-item>
+            <ServiceCard
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+              duration={service.duration}
+              highlights={service.highlights}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 </Layout>
