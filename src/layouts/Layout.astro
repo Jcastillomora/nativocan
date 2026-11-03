@@ -49,5 +49,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <slot />
+
+    <!-- JavaScript -->
+    <script>
+      import '../scripts/main.js';
+      import '../scripts/modal.js';
+      import '../scripts/carousel.js';
+      import '../scripts/scroll-reveal.js';
+    </script>
   </body>
 </html>
