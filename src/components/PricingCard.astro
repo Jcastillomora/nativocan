@@ -1,0 +1,44 @@
+---
+interface Props {
+  name: string;
+  category: string;
+  price: string;
+  duration: string;
+  features: string[];
+  popular: boolean;
+  cta: string;
+}
+
+const { name, category, price, duration, features, popular, cta } = Astro.props;
+---
+
+<div class={`bg-white rounded-lg shadow-md p-6 md:p-8 relative ${popular ? 'border-2 border-primary scale-105 shadow-xl' : ''}`}>
+  {popular && (
+    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+      Más Popular
+    </div>
+  )}
+
+  <div class="text-sm text-neutral-600 mb-2">{category}</div>
+  <h3 class="text-2xl font-bold mb-3 text-neutral-900">{name}</h3>
+  <div class="text-4xl font-bold text-primary mb-2">{price}</div>
+  <div class="text-neutral-600 mb-6">{duration}</div>
+
+  <ul class="space-y-3 mb-8">
+    {features.map(feature => (
+      <li class="flex items-start gap-2 text-neutral-700">
+        <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <span>{feature}</span>
+      </li>
+    ))}
+  </ul>
+
+  <a
+    href="#contacto"
+    class="block w-full text-center bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-all duration-300"
+  >
+    {cta}
+  </a>
+</div>
