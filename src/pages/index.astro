@@ -1,11 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
 import { siteData } from '../data/site.js';
 ---
 <Layout title="Test" description="Test page">
   <Header />
-  <div class="h-screen flex items-center justify-center">
-    <h1 class="text-4xl">Test - {siteData.business.name}</h1>
-  </div>
+  <Hero />
 </Layout>
