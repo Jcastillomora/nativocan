@@ -48,27 +48,93 @@
 
       <!-- Instagram Embed Container -->
       <div class="instagram-feed-container">
-        <!-- Instafeed.js - Free Instagram Feed -->
-        <div id="instafeed" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+        <!-- Instagram Official Embeds - Simple, no API needed -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="instagram-posts-grid">
 
-        <!-- Loading state -->
-        <div id="instafeed-loading" class="text-center py-12">
-          <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-          <p class="text-neutral-600 mt-4">Cargando feed de Instagram...</p>
+          <!-- Post 1 - Reemplaza con tu URL de Instagram -->
+          <div class="instagram-post-wrapper">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE1/"
+              data-instgrm-version="14"
+              style="background:#FFF; border:0; border-radius:12px; box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1); margin: 1px; max-width:100%; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            </blockquote>
+          </div>
+
+          <!-- Post 2 -->
+          <div class="instagram-post-wrapper">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE2/"
+              data-instgrm-version="14"
+              style="background:#FFF; border:0; border-radius:12px; box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1); margin: 1px; max-width:100%; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            </blockquote>
+          </div>
+
+          <!-- Post 3 -->
+          <div class="instagram-post-wrapper">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE3/"
+              data-instgrm-version="14"
+              style="background:#FFF; border:0; border-radius:12px; box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1); margin: 1px; max-width:100%; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            </blockquote>
+          </div>
+
+          <!-- Post 4 -->
+          <div class="instagram-post-wrapper">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE4/"
+              data-instgrm-version="14"
+              style="background:#FFF; border:0; border-radius:12px; box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1); margin: 1px; max-width:100%; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            </blockquote>
+          </div>
+
+          <!-- Post 5 -->
+          <div class="instagram-post-wrapper">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE5/"
+              data-instgrm-version="14"
+              style="background:#FFF; border:0; border-radius:12px; box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1); margin: 1px; max-width:100%; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            </blockquote>
+          </div>
+
+          <!-- Post 6 -->
+          <div class="instagram-post-wrapper">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE6/"
+              data-instgrm-version="14"
+              style="background:#FFF; border:0; border-radius:12px; box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1); margin: 1px; max-width:100%; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            </blockquote>
+          </div>
+
         </div>
 
-        <!-- Error/Setup Instructions -->
-        <div id="instafeed-setup" class="hidden mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <h4 class="font-semibold text-blue-900 mb-2">🔧 Configuración del Feed de Instagram (Gratis):</h4>
-          <p class="text-sm text-blue-800 mb-3">
-            Sigue las instrucciones en <code class="bg-blue-100 px-2 py-1 rounded">docs/INSTAGRAM_SETUP.md</code> para obtener tu Access Token.
-          </p>
-          <ol class="text-sm text-blue-800 space-y-1 ml-4 list-decimal">
-            <li>Crear una App en Facebook Developers (gratis)</li>
-            <li>Obtener tu Instagram Access Token</li>
-            <li>Agregar el token en este componente</li>
-            <li>Rebuild y el feed se mostrará automáticamente</li>
+        <!-- Instructions -->
+        <div class="mt-8 p-6 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg">
+          <h4 class="font-semibold text-purple-900 mb-3 flex items-center gap-2">
+            📸 Cómo actualizar los posts de Instagram
+          </h4>
+          <ol class="text-sm text-purple-800 space-y-2 ml-4 list-decimal">
+            <li><strong>Abre Instagram en tu navegador</strong> (no en la app móvil)</li>
+            <li><strong>Ve al post que quieres mostrar</strong> en tu perfil</li>
+            <li><strong>Click en los 3 puntos (⋯)</strong> → "Embed" (Insertar)</li>
+            <li><strong>Copia el código</strong> que aparece</li>
+            <li><strong>En <code class="bg-purple-100 px-2 py-1 rounded">src/components/SocialFeed.astro</code></strong>, reemplaza uno de los posts EXAMPLE</li>
+            <li><strong>Rebuild:</strong> <code class="bg-purple-100 px-2 py-1 rounded">npm run build</code></li>
           </ol>
+          <p class="text-sm text-purple-700 mt-4 font-medium">
+            💡 <strong>Tip:</strong> Actualiza los posts cada 1-2 semanas con tus publicaciones más recientes.
+          </p>
         </div>
       </div>
     </div>
@@ -139,8 +205,8 @@
   </div>
 </section>
 
-<!-- Instafeed.js Library -->
-<script src="https://cdn.jsdelivr.net/npm/instafeed.js@2.0.0/dist/instafeed.min.js"></script>
+<!-- Instagram Embed Script -->
+<script async src="//www.instagram.com/embed.js"></script>
 
 <!-- TikTok Embed Script - Deferred loading to avoid overload-protect -->
 <script>
@@ -169,41 +235,25 @@
   }
 </script>
 
-<script is:inline>
-  // Instagram Feed Configuration
-  // TODO: Replace 'YOUR_ACCESS_TOKEN' with your actual Instagram Access Token
-  // See docs/INSTAGRAM_SETUP.md for instructions
-
-  const INSTAGRAM_ACCESS_TOKEN = 'YOUR_ACCESS_TOKEN'; // Replace this!
-
-  if (typeof Instafeed !== 'undefined' && INSTAGRAM_ACCESS_TOKEN !== 'YOUR_ACCESS_TOKEN') {
-    const feed = new Instafeed({
-      accessToken: INSTAGRAM_ACCESS_TOKEN,
-      limit: 8, // Number of posts to show
-      template: '<a href="{{link}}" target="_blank" rel="noopener noreferrer" class="instagram-post aspect-square bg-cover bg-center rounded-lg hover:opacity-90 transition-opacity relative overflow-hidden group" style="background-image: url({{image}});"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><div class="text-white text-sm"><span class="font-semibold">❤️ {{likes}}</span> <span class="ml-3">💬 {{comments}}</span></div></div></a>',
-      after: function() {
-        // Hide loading, show feed
-        document.getElementById('instafeed-loading').classList.add('hidden');
-      },
-      error: function(error) {
-        console.error('Instagram feed error:', error);
-        document.getElementById('instafeed-loading').classList.add('hidden');
-        document.getElementById('instafeed-setup').classList.remove('hidden');
-      }
-    });
-
-    try {
-      feed.run();
-    } catch(e) {
-      console.error('Instafeed error:', e);
-      document.getElementById('instafeed-loading').classList.add('hidden');
-      document.getElementById('instafeed-setup').classList.remove('hidden');
+<script>
+  // Reinitialize Instagram embeds when switching tabs
+  document.addEventListener('DOMContentLoaded', function() {
+    // Load Instagram script if not already loaded
+    if (!window.instgrm) {
+      const script = document.createElement('script');
+      script.src = '//www.instagram.com/embed.js';
+      script.async = true;
+      script.onload = () => {
+        if (window.instgrm) {
+          window.instgrm.Embeds.process();
+        }
+      };
+      document.body.appendChild(script);
+    } else {
+      // Process embeds if script already loaded
+      window.instgrm.Embeds.process();
     }
-  } else {
-    // No access token configured
-    document.getElementById('instafeed-loading').classList.add('hidden');
-    document.getElementById('instafeed-setup').classList.remove('hidden');
-  }
+  });
 </script>
 
 <script is:inline>
@@ -238,11 +288,17 @@
               content.style.opacity = '1';
             }, 10);
 
-            // Reinitialize TikTok embed when switching to TikTok tab
+            // Reinitialize embeds when switching tabs
             if (target === 'tiktok') {
               setTimeout(() => {
                 if (window.tiktokEmbed && typeof window.tiktokEmbed === 'function') {
                   window.tiktokEmbed();
+                }
+              }, 100);
+            } else if (target === 'instagram') {
+              setTimeout(() => {
+                if (window.instgrm && window.instgrm.Embeds) {
+                  window.instgrm.Embeds.process();
                 }
               }, 100);
             }
