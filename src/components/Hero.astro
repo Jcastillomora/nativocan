@@ -3,11 +3,11 @@ import { siteData } from '../data/site.js';
 ---
 
 <section
-  class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20"
-  data-bg-image="/images/hero/hero-bg.jpg"
+  class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+  style="background-image: url('/images/hero/hero-nativocan.jpg');"
 >
-  <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-black/40"></div>
+  <!-- Dark Overlay for text readability -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
 
   <!-- Content -->
   <div class="relative z-10 container mx-auto px-4 max-w-7xl text-center md:text-left">
@@ -48,3 +48,34 @@ import { siteData } from '../data/site.js';
     </div>
   </div>
 </section>
+
+<style>
+  section {
+    /* Ensure proper positioning on mobile */
+    background-attachment: scroll;
+  }
+
+  /* Optimize for mobile devices */
+  @media (max-width: 768px) {
+    section {
+      background-position: center center;
+      min-height: 100vh;
+      min-height: 100svh; /* For mobile browsers with dynamic viewport */
+    }
+  }
+
+  /* Better positioning on tablet and desktop */
+  @media (min-width: 769px) {
+    section {
+      background-position: center 40%;
+      background-attachment: fixed; /* Parallax effect on desktop */
+    }
+  }
+
+  /* Ensure image doesn't pixelate on large screens */
+  @media (min-width: 1920px) {
+    section {
+      background-size: cover;
+    }
+  }
+</style>
