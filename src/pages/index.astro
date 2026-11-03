@@ -3,8 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import Modal from '../components/Modal.astro';
 import { siteData } from '../data/site.js';
 import { trainingServices } from '../data/services.js';
+import { hotelFeatures, hotelGallery } from '../data/hotel.js';
 ---
 <Layout title="Test" description="Test page">
   <Header />
@@ -31,4 +33,44 @@ import { trainingServices } from '../data/services.js';
       </div>
     </div>
   </section>
+
+  <!-- Hotel Section -->
+  <section id="hotel" class="py-16 md:py-24">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-900">
+        Hotel Canino - Un Hogar Lejos de Casa
+      </h2>
+
+      <!-- Features alternating layout -->
+      {hotelFeatures.map((feature, index) => (
+        <div class={`flex flex-col md:flex-row gap-8 mb-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+          <div class="md:w-1/2">
+            <div class="bg-neutral-200 rounded-lg h-64 flex items-center justify-center text-6xl">
+              {feature.icon}
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-neutral-900">{feature.title}</h3>
+            <p class="text-lg text-neutral-600">{feature.description}</p>
+          </div>
+        </div>
+      ))}
+
+      <!-- Gallery grid -->
+      <h3 class="text-3xl font-bold text-center mb-8 mt-16 text-neutral-900">Galería de Instalaciones</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {hotelGallery.map((img, index) => (
+          <div
+            class="bg-neutral-200 rounded-lg h-48 cursor-pointer hover:opacity-90 transition-opacity flex items-center justify-center text-4xl"
+            data-gallery-image
+            data-image-index={index}
+          >
+            📷
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Modal />
 </Layout>

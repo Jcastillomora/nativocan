@@ -1,0 +1,45 @@
+<div
+  class="fixed inset-0 bg-black/90 z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4"
+  data-modal
+>
+  <!-- Close Button -->
+  <button
+    class="absolute top-4 right-4 text-white hover:text-primary transition-colors p-2 z-10"
+    data-modal-close
+    aria-label="Cerrar"
+  >
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+
+  <!-- Image Container -->
+  <div class="relative max-w-5xl w-full">
+    <img
+      src=""
+      alt=""
+      class="w-full h-auto rounded-lg"
+      data-modal-image
+    />
+
+    <!-- Navigation Buttons -->
+    <button
+      class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-3 backdrop-blur-sm transition-all"
+      data-modal-prev
+      aria-label="Anterior"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+    <button
+      class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-3 backdrop-blur-sm transition-all"
+      data-modal-next
+      aria-label="Siguiente"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+</div>
