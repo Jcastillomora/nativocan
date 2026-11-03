@@ -1,0 +1,39 @@
+---
+// BackToTop.astro
+// Floating button to scroll back to top
+---
+
+<button
+  data-back-to-top
+  class="fixed bottom-8 right-8 z-40 bg-primary text-white rounded-full p-4 shadow-lg hover:bg-primary-dark transition-all duration-300 opacity-0 pointer-events-none"
+  aria-label="Volver arriba"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+  </svg>
+</button>
+
+<script>
+  const backToTop = document.querySelector('[data-back-to-top]') as HTMLElement;
+
+  // Show/hide button on scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop?.classList.remove('opacity-0', 'pointer-events-none');
+    } else {
+      backToTop?.classList.add('opacity-0', 'pointer-events-none');
+    }
+  });
+
+  // Scroll to top on click
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
