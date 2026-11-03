@@ -92,11 +92,18 @@
       <!-- TikTok Embed Container -->
       <div class="tiktok-feed-container">
         <div class="flex justify-center">
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nativocan.cl" data-unique-id="nativocan.cl" data-embed-from="embed_page" data-embed-type="creator" style="max-width:780px; min-width:288px;">
-            <section>
-              <a target="_blank" href="https://www.tiktok.com/@nativocan.cl?refer=creator_embed">@nativocan.cl</a>
-            </section>
-          </blockquote>
+          <div id="tiktok-embed-wrapper">
+            <blockquote
+              class="tiktok-embed"
+              cite="https://www.tiktok.com/@nativocan.cl"
+              data-unique-id="nativocan.cl"
+              data-embed-type="creator"
+              style="max-width: 780px; min-width: 288px;">
+              <section>
+                <a target="_blank" href="https://www.tiktok.com/@nativocan.cl?refer=creator_embed">@nativocan.cl</a>
+              </section>
+            </blockquote>
+          </div>
         </div>
       </div>
     </div>
@@ -132,11 +139,35 @@
   </div>
 </section>
 
-<!-- TikTok Embed Script -->
-<script async src="https://www.tiktok.com/embed.js"></script>
-
 <!-- Instafeed.js Library -->
 <script src="https://cdn.jsdelivr.net/npm/instafeed.js@2.0.0/dist/instafeed.min.js"></script>
+
+<!-- TikTok Embed Script - Deferred loading to avoid overload-protect -->
+<script>
+  // Wait for DOM to be ready before loading TikTok script
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadTikTokScript);
+  } else {
+    loadTikTokScript();
+  }
+
+  function loadTikTokScript() {
+    // Avoid loading if already loaded
+    if (document.querySelector('script[src*="tiktok.com/embed.js"]')) {
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://www.tiktok.com/embed.js';
+    script.defer = true; // Use defer instead of async
+
+    script.onerror = function() {
+      console.error('Failed to load TikTok embed script');
+    };
+
+    document.body.appendChild(script);
+  }
+</script>
 
 <script is:inline>
   // Instagram Feed Configuration
@@ -175,39 +206,50 @@
   }
 </script>
 
-<script>
+<script is:inline>
   // Social feed tab switching
-  const tabs = document.querySelectorAll('[data-social-tab]');
-  const contents = document.querySelectorAll('[data-social-content]');
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('[data-social-tab]');
+    const contents = document.querySelectorAll('[data-social-content]');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.socialTab;
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.socialTab;
 
-      // Update tabs
-      tabs.forEach(t => {
-        if (t.dataset.socialTab === target) {
-          t.classList.remove('bg-neutral-200', 'text-neutral-700', 'hover:bg-neutral-300');
-          t.classList.add('bg-primary', 'text-white', 'shadow-md', 'active');
-        } else {
-          t.classList.remove('bg-primary', 'text-white', 'shadow-md', 'active');
-          t.classList.add('bg-neutral-200', 'text-neutral-700', 'hover:bg-neutral-300');
-        }
-      });
+        // Update tabs
+        tabs.forEach(t => {
+          if (t.dataset.socialTab === target) {
+            t.classList.remove('bg-neutral-200', 'text-neutral-700', 'hover:bg-neutral-300');
+            t.classList.add('bg-primary', 'text-white', 'shadow-md', 'active');
+          } else {
+            t.classList.remove('bg-primary', 'text-white', 'shadow-md', 'active');
+            t.classList.add('bg-neutral-200', 'text-neutral-700', 'hover:bg-neutral-300');
+          }
+        });
 
-      // Update content
-      contents.forEach(content => {
-        if (content.dataset.socialContent === target) {
-          content.classList.remove('hidden');
-          // Fade in animation
-          content.style.opacity = '0';
-          setTimeout(() => {
-            content.style.transition = 'opacity 0.3s ease-in';
-            content.style.opacity = '1';
-          }, 10);
-        } else {
-          content.classList.add('hidden');
-        }
+        // Update content
+        contents.forEach(content => {
+          if (content.dataset.socialContent === target) {
+            content.classList.remove('hidden');
+            // Fade in animation
+            content.style.opacity = '0';
+            setTimeout(() => {
+              content.style.transition = 'opacity 0.3s ease-in';
+              content.style.opacity = '1';
+            }, 10);
+
+            // Reinitialize TikTok embed when switching to TikTok tab
+            if (target === 'tiktok') {
+              setTimeout(() => {
+                if (window.tiktokEmbed && typeof window.tiktokEmbed === 'function') {
+                  window.tiktokEmbed();
+                }
+              }, 100);
+            }
+          } else {
+            content.classList.add('hidden');
+          }
+        });
       });
     });
   });
