@@ -14,6 +14,7 @@ import { team } from '../data/team.js';
 import { testimonials } from '../data/testimonials.js';
 import { pricingPlans } from '../data/pricing.js';
 import { faqs } from '../data/faqs.js';
+import ContactForm from '../components/ContactForm.astro';
 ---
 <Layout title="Test" description="Test page">
   <Header />
@@ -225,6 +226,96 @@ import { faqs } from '../data/faqs.js';
             <p class="text-neutral-700 leading-relaxed">{faq.answer}</p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contacto" class="py-16 md:py-24 bg-neutral-50">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-900">
+        Contáctanos
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <!-- Form - 3 columns -->
+        <div class="md:col-span-3">
+          <ContactForm />
+        </div>
+
+        <!-- Contact Info - 2 columns -->
+        <div class="md:col-span-2 space-y-6">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-4 text-neutral-900">Información de Contacto</h3>
+            <div class="space-y-4">
+              <div>
+                <p class="text-sm font-semibold text-neutral-600 mb-1">Teléfono</p>
+                <a
+                  href={`tel:${siteData.business.phone}`}
+                  class="text-primary hover:text-primary-dark transition-colors text-lg font-medium"
+                >
+                  {siteData.business.phone}
+                </a>
+              </div>
+
+              <div>
+                <p class="text-sm font-semibold text-neutral-600 mb-1">Email</p>
+                <a
+                  href={`mailto:${siteData.business.email}`}
+                  class="text-primary hover:text-primary-dark transition-colors break-all"
+                >
+                  {siteData.business.email}
+                </a>
+              </div>
+
+              <div>
+                <p class="text-sm font-semibold text-neutral-600 mb-1">Dirección</p>
+                <p class="text-neutral-700">{siteData.business.address}</p>
+              </div>
+
+              <div>
+                <p class="text-sm font-semibold text-neutral-600 mb-1">Horarios</p>
+                <p class="text-neutral-700">{siteData.business.hours}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social buttons -->
+          <div class="flex flex-col gap-3">
+            <a
+              href={`https://wa.me/${siteData.social.whatsapp}?text=${encodeURIComponent(siteData.social.whatsappMessage)}`}
+              class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full transition-colors text-center shadow-md hover:shadow-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              💬 WhatsApp
+            </a>
+            <a
+              href={siteData.social.facebook}
+              class="bg-secondary hover:bg-secondary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors text-center shadow-md hover:shadow-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📘 Facebook
+            </a>
+            <a
+              href={siteData.social.instagram}
+              class="bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors text-center shadow-md hover:shadow-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📷 Instagram
+            </a>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="bg-neutral-200 rounded-lg h-64 flex items-center justify-center">
+            <p class="text-neutral-600 text-center px-4">
+              🗺️ Mapa<br />
+              <span class="text-sm">TODO: Embed Google Maps iframe</span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
