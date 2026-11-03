@@ -20,6 +20,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="language" content="Spanish" />
     <meta name="author" content="Nativocan" />
 
+    <!-- Geo tags -->
+    <meta name="geo.region" content="CL-TODO" />
+    <meta name="geo.placename" content="TODO_CIUDAD" />
+
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
 
@@ -28,6 +32,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL('/og-image.jpg', Astro.site)} />
     <meta property="og:locale" content="es_CL" />
     <meta property="og:site_name" content="Nativocan" />
 
@@ -36,6 +41,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL('/og-image.jpg', Astro.site)} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -46,6 +52,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="/src/styles/global.css" />
+
+    <!-- Additional head content -->
+    <slot name="head" />
   </head>
   <body>
     <slot />
