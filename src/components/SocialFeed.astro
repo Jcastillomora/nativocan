@@ -48,63 +48,26 @@
 
       <!-- Instagram Embed Container -->
       <div class="instagram-feed-container">
-        <!-- Option 1: Using Instagram embed widget (recommended) -->
-        <div class="text-center py-12 bg-white rounded-lg shadow-inner">
-          <p class="text-neutral-600 mb-4">
-            📸 Feed de Instagram
-          </p>
-          <p class="text-sm text-neutral-500 mb-6 max-w-md mx-auto">
-            Para activar el feed automático de Instagram, usa un servicio como
-            <a href="https://elfsight.com/instagram-feed-instashow/" target="_blank" class="text-primary hover:underline">Elfsight</a> o
-            <a href="https://embedsocial.com/products/embedfeed/" target="_blank" class="text-primary hover:underline">EmbedSocial</a>
-          </p>
+        <!-- Instafeed.js - Free Instagram Feed -->
+        <div id="instafeed" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
 
-          <!-- Manual Instagram Posts Grid -->
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
-            <!-- Placeholder posts - Replace with actual Instagram embed code -->
-            <a
-              href="https://www.instagram.com/nativocan.cl/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="aspect-square bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center text-white text-4xl"
-            >
-              📷
-            </a>
-            <a
-              href="https://www.instagram.com/nativocan.cl/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="aspect-square bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center text-white text-4xl"
-            >
-              🐕
-            </a>
-            <a
-              href="https://www.instagram.com/nativocan.cl/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="aspect-square bg-gradient-to-br from-green-400 via-blue-500 to-purple-500 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center text-white text-4xl"
-            >
-              🎾
-            </a>
-            <a
-              href="https://www.instagram.com/nativocan.cl/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="aspect-square bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center text-white text-4xl"
-            >
-              ⭐
-            </a>
-          </div>
+        <!-- Loading state -->
+        <div id="instafeed-loading" class="text-center py-12">
+          <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+          <p class="text-neutral-600 mt-4">Cargando feed de Instagram...</p>
         </div>
 
-        <!-- Instructions for setup -->
-        <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <h4 class="font-semibold text-blue-900 mb-2">🔧 Configuración del Feed de Instagram:</h4>
+        <!-- Error/Setup Instructions -->
+        <div id="instafeed-setup" class="hidden mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <h4 class="font-semibold text-blue-900 mb-2">🔧 Configuración del Feed de Instagram (Gratis):</h4>
+          <p class="text-sm text-blue-800 mb-3">
+            Sigue las instrucciones en <code class="bg-blue-100 px-2 py-1 rounded">docs/INSTAGRAM_SETUP.md</code> para obtener tu Access Token.
+          </p>
           <ol class="text-sm text-blue-800 space-y-1 ml-4 list-decimal">
-            <li>Registrarse en <a href="https://embedsocial.com" target="_blank" class="underline">EmbedSocial</a> (gratis)</li>
-            <li>Conectar tu cuenta de Instagram @nativocan.cl</li>
-            <li>Generar el código embed</li>
-            <li>Reemplazar este contenido con el script generado</li>
+            <li>Crear una App en Facebook Developers (gratis)</li>
+            <li>Obtener tu Instagram Access Token</li>
+            <li>Agregar el token en este componente</li>
+            <li>Rebuild y el feed se mostrará automáticamente</li>
           </ol>
         </div>
       </div>
@@ -128,57 +91,12 @@
 
       <!-- TikTok Embed Container -->
       <div class="tiktok-feed-container">
-        <div class="text-center py-12 bg-white rounded-lg shadow-inner">
-          <p class="text-neutral-600 mb-4">
-            🎵 Feed de TikTok
-          </p>
-          <p class="text-sm text-neutral-500 mb-6 max-w-md mx-auto">
-            Para activar el feed automático de TikTok, usa el
-            <a href="https://www.tiktok.com/embed" target="_blank" class="text-primary hover:underline">TikTok Embed</a>
-          </p>
-
-          <!-- Manual TikTok Videos Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto">
-            <!-- Placeholder videos - Replace with actual TikTok embeds -->
-            <a
-              href="https://www.tiktok.com/@nativocan.cl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="aspect-[9/16] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center text-white text-5xl relative overflow-hidden"
-            >
-              <div class="absolute inset-0 bg-black/20"></div>
-              <span class="relative">▶️</span>
-            </a>
-            <a
-              href="https://www.tiktok.com/@nativocan.cl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="aspect-[9/16] bg-gradient-to-br from-pink-400 via-red-500 to-yellow-600 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center text-white text-5xl relative overflow-hidden"
-            >
-              <div class="absolute inset-0 bg-black/20"></div>
-              <span class="relative">🎬</span>
-            </a>
-            <a
-              href="https://www.tiktok.com/@nativocan.cl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="aspect-[9/16] bg-gradient-to-br from-green-400 via-teal-500 to-blue-600 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center text-white text-5xl relative overflow-hidden"
-            >
-              <div class="absolute inset-0 bg-black/20"></div>
-              <span class="relative">🐕</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Instructions for setup -->
-        <div class="mt-6 p-4 bg-purple-50 border border-purple-200 rounded-lg">
-          <h4 class="font-semibold text-purple-900 mb-2">🔧 Configuración del Feed de TikTok:</h4>
-          <ol class="text-sm text-purple-800 space-y-1 ml-4 list-decimal">
-            <li>Visitar <a href="https://www.tiktok.com/embed" target="_blank" class="underline">TikTok Embed Generator</a></li>
-            <li>Ingresar el URL de tu perfil: @nativocan.cl</li>
-            <li>Generar el código embed para profile o videos individuales</li>
-            <li>Reemplazar este contenido con los iframes generados</li>
-          </ol>
+        <div class="flex justify-center">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nativocan.cl" data-unique-id="nativocan.cl" data-embed-from="embed_page" data-embed-type="creator" style="max-width:780px; min-width:288px;">
+            <section>
+              <a target="_blank" href="https://www.tiktok.com/@nativocan.cl?refer=creator_embed">@nativocan.cl</a>
+            </section>
+          </blockquote>
         </div>
       </div>
     </div>
@@ -213,6 +131,49 @@
     </div>
   </div>
 </section>
+
+<!-- TikTok Embed Script -->
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+<!-- Instafeed.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/instafeed.js@2.0.0/dist/instafeed.min.js"></script>
+
+<script is:inline>
+  // Instagram Feed Configuration
+  // TODO: Replace 'YOUR_ACCESS_TOKEN' with your actual Instagram Access Token
+  // See docs/INSTAGRAM_SETUP.md for instructions
+
+  const INSTAGRAM_ACCESS_TOKEN = 'YOUR_ACCESS_TOKEN'; // Replace this!
+
+  if (typeof Instafeed !== 'undefined' && INSTAGRAM_ACCESS_TOKEN !== 'YOUR_ACCESS_TOKEN') {
+    const feed = new Instafeed({
+      accessToken: INSTAGRAM_ACCESS_TOKEN,
+      limit: 8, // Number of posts to show
+      template: '<a href="{{link}}" target="_blank" rel="noopener noreferrer" class="instagram-post aspect-square bg-cover bg-center rounded-lg hover:opacity-90 transition-opacity relative overflow-hidden group" style="background-image: url({{image}});"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4"><div class="text-white text-sm"><span class="font-semibold">❤️ {{likes}}</span> <span class="ml-3">💬 {{comments}}</span></div></div></a>',
+      after: function() {
+        // Hide loading, show feed
+        document.getElementById('instafeed-loading').classList.add('hidden');
+      },
+      error: function(error) {
+        console.error('Instagram feed error:', error);
+        document.getElementById('instafeed-loading').classList.add('hidden');
+        document.getElementById('instafeed-setup').classList.remove('hidden');
+      }
+    });
+
+    try {
+      feed.run();
+    } catch(e) {
+      console.error('Instafeed error:', e);
+      document.getElementById('instafeed-loading').classList.add('hidden');
+      document.getElementById('instafeed-setup').classList.remove('hidden');
+    }
+  } else {
+    // No access token configured
+    document.getElementById('instafeed-loading').classList.add('hidden');
+    document.getElementById('instafeed-setup').classList.remove('hidden');
+  }
+</script>
 
 <script>
   // Social feed tab switching

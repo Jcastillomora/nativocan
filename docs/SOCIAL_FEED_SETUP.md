@@ -2,54 +2,50 @@
 
 Este documento explica cómo configurar los feeds embebidos de Instagram y TikTok en la landing page de Nativocan.
 
-## 📷 Instagram Feed
+## 🎵 TikTok Feed (✅ CONFIGURADO)
 
-### Opción 1: EmbedSocial (Recomendado)
+El feed de TikTok ya está configurado y funcionando. Muestra el perfil completo de @nativocan.cl con los videos más recientes.
 
-**EmbedSocial** ofrece un plan gratuito con feeds automáticos de Instagram.
+No requiere configuración adicional - se actualiza automáticamente cuando publicas nuevos videos.
 
-1. **Registro:**
-   - Ve a [embedsocial.com](https://embedsocial.com/products/embedfeed/)
-   - Regístrate con tu email
-   - Plan gratuito disponible: hasta 150 posts/mes
+---
 
-2. **Conectar Instagram:**
-   - Dashboard → "Add New Source"
-   - Selecciona "Instagram"
-   - Conecta tu cuenta @nativocan.cl
-   - Autoriza el acceso
+## 📷 Instagram Feed (100% Gratis)
 
-3. **Personalizar el Widget:**
-   - Layout: Grid o Carousel
-   - Número de posts: 4-8 recomendado
-   - Colores: Mantener branding de Nativocan
-   - Mostrar: username, likes (opcional)
+### Opción 1: Instafeed.js + Instagram Basic Display API (Recomendado - GRATIS)
 
-4. **Obtener el Código:**
-   - Click en "Generate Code"
-   - Copia el código JavaScript
-   - Formato será similar a:
-   ```html
-   <script src="https://embedsocial.com/cdn/ht.js" id="EmbedSocialHashtagScript"></script>
-   <div class="embedsocial-hashtag" data-ref="YOUR_UNIQUE_ID"></div>
-   ```
+**100% Gratis usando Instafeed.js** - Ya está integrado en el sitio, solo necesitas configurar el Access Token.
 
-5. **Implementar en el Sitio:**
-   - Abre `src/components/SocialFeed.astro`
-   - Busca el comentario `<!-- Instagram Embed Container -->`
-   - Reemplaza el contenido del `div.instagram-feed-container` con el código generado
-   - Elimina el contenido placeholder (grid con emojis)
+**✅ Ventajas:**
+- Completamente gratis, sin costos mensuales
+- Sin límites de posts o visualizaciones
+- Open source y mantenido activamente
+- Se actualiza automáticamente cuando publicas
 
-### Opción 2: Elfsight
+**📋 Pasos:**
 
-**Elfsight** es otra alternativa popular con plan gratuito.
+1. **Lee la guía completa:** `docs/INSTAGRAM_SETUP.md`
 
-1. Ve a [elfsight.com/instagram-feed-instashow/](https://elfsight.com/instagram-feed-instashow/)
-2. Sigue pasos similares a EmbedSocial
-3. Copia el código del widget
-4. Pega en `SocialFeed.astro`
+2. **Resumen rápido:**
+   - Crear App en Facebook Developers (5 min)
+   - Obtener Access Token de Instagram (5 min)
+   - Pegar token en `src/components/SocialFeed.astro` (1 min)
+   - Build y deploy
 
-### Opción 3: Instagram Official Embed (Manual)
+3. **El token dura 60 días** y se puede renovar con una URL simple.
+
+**👉 Ver instrucciones detalladas en:** `docs/INSTAGRAM_SETUP.md`
+
+### Opción 2: EmbedSocial o Elfsight (De pago, más fácil)
+
+Si prefieres pagar por un servicio más simple:
+
+- **EmbedSocial:** [embedsocial.com](https://embedsocial.com) - Plan desde $9/mes
+- **Elfsight:** [elfsight.com](https://elfsight.com/instagram-feed-instashow/) - Plan desde $7/mes
+
+Ambos tienen trials gratuitos de 7 días.
+
+### Opción 3: Instagram Official Embed (Manual - No recomendado)
 
 Para embeds de posts individuales:
 
@@ -67,44 +63,21 @@ Para embeds de posts individuales:
 <script async src="//www.instagram.com/embed.js"></script>
 ```
 
-## 🎵 TikTok Feed
+## ✅ Estado de Configuración
 
-### Opción 1: TikTok Embed Generator
+### TikTok
+- ✅ **CONFIGURADO Y FUNCIONANDO**
+- Embed oficial de TikTok
+- Muestra perfil de @nativocan.cl
+- Actualización automática
+- Sin mantenimiento requerido
 
-1. **Obtener código de perfil:**
-   - Ve a [TikTok Embed](https://www.tiktok.com/embed)
-   - Ingresa tu username: @nativocan.cl
-   - Selecciona tipo: "Profile" o "Video"
-
-2. **Para el perfil completo:**
-   ```html
-   <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@nativocan.cl" data-unique-id="nativocan.cl" data-embed-type="creator">
-     <section>
-       <a target="_blank" href="https://www.tiktok.com/@nativocan.cl">@nativocan.cl</a>
-     </section>
-   </blockquote>
-   <script async src="https://www.tiktok.com/embed.js"></script>
-   ```
-
-3. **Para videos individuales:**
-   - Ve al video en TikTok
-   - Click en "Share" → "Embed"
-   - Copia el código `<blockquote>`
-
-4. **Implementar:**
-   - Abre `src/components/SocialFeed.astro`
-   - Busca `<!-- TikTok Embed Container -->`
-   - Reemplaza el contenido placeholder
-   - Puedes usar múltiples embeds en el grid
-
-### Opción 2: Embedsocial para TikTok
-
-EmbedSocial también soporta TikTok:
-
-1. Dashboard → "Add New Source" → "TikTok"
-2. Conecta la cuenta @nativocan.cl
-3. Personaliza el widget
-4. Copia el código e implementa
+### Instagram
+- ⚙️ **LISTO PARA CONFIGURAR**
+- Instafeed.js integrado
+- Requiere Access Token (gratis)
+- 15 minutos de configuración
+- Ver: `docs/INSTAGRAM_SETUP.md`
 
 ## 🎨 Personalización del Diseño
 
