@@ -13,14 +13,14 @@ export const siteData = {
     }
   },
   social: {
-    facebook: "https://facebook.com/nativocan", // TODO: Update with real Facebook URL
-    instagram: "https://instagram.com/nativocan", // TODO: Update with real Instagram URL
-    whatsapp: "56912345678", // TODO: Update with real WhatsApp number (only numbers)
+    facebook: "https://facebook.com/nativocan.cl", // TODO: Update with real Facebook URL
+    instagram: "https://www.instagram.com/nativocan.cl", // TODO: Update with real Instagram URL
+    whatsapp: "56955314538", // TODO: Update with real WhatsApp number (only numbers)
     whatsappMessage: "Hola, quiero información sobre los servicios de Nativocan"
   },
   seo: {
-    title: "Nativocan - Centro de Desarrollo Canino | Adiestramiento y Hotel en [Ciudad]", // TODO: Update with real city
-    description: "Servicios profesionales de adiestramiento canino y hotel para perros en [Ciudad]. Entrenadores certificados, instalaciones de primera clase. ¡Agenda tu cita hoy!", // TODO: Update with real city
-    keywords: "adiestramiento canino, hotel para perros, guardería canina, entrenador de perros, [ciudad]" // TODO: Update with real city
+    title: "Nativocan - Centro de Desarrollo Canino | Adiestramiento y Hotel en Temuco y Padre las Casas", // TODO: Update with real city
+    description: "Servicios profesionales de adiestramiento canino y hotel para perros en Temuco y Padre las Casas. Entrenadores certificados, instalaciones de primera clase. ¡Agenda tu cita hoy!", // TODO: Update with real city
+    keywords: "adiestramiento canino, hotel para perros, guardería canina, entrenador de perros, Temuco y Padre las Casas // TODO: Update with real city"
   }
 };
